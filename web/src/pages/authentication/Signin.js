@@ -6,6 +6,7 @@ const Signin = () => {
         password: '',
     })
 
+
     const changeHandler = (e)=> {
         e.persist();
         setData({
@@ -15,8 +16,7 @@ const Signin = () => {
     }   
     
     const submitHandler = (e)=> {
-        e.preventDefault();
-        console.log(data)
+        e.preventDefault();        
     }
     
     return (
@@ -26,13 +26,13 @@ const Signin = () => {
                     <div>
                         <label>Email</label>
                         <input type="email" name="email" placeholder="your email address" 
-                        value={data.username} onChange={changeHandler}/>
+                        required value={data.email} onChange={changeHandler}/>
                     </div>
 
                     <div>
                         <label>Password</label>
                         <input type="password" name="password" placeholder="your password"  
-                        value={data.password} onChange={changeHandler}/>
+                        required value={data.password} onChange={changeHandler}/>
                     </div>
                     
                     <div>

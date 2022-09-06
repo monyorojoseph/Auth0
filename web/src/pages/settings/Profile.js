@@ -3,7 +3,15 @@ import ChangePassword from './Changerpassword';
 const Profile = () => {
     return (
         <div>
-            Profile
+            <div>
+                <div>
+                    <h4>User profile</h4>
+                    <div>
+                        <p>Username:-</p>  
+                        <p>Email:-</p>                      
+                    </div>
+                </div>
+            </div>
             <ChangePassword />
         </div>
     );
