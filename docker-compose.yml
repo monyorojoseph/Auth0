@@ -1,0 +1,32 @@
+version: '3.9'
+
+services:
+  api:
+    build: ./api
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - 8000:8000
+    volumes:
+      - ./api/:/usr/src/api/
+    env_file:
+      - ./.env.dev
+    depends_on:
+      - db
+  
+  web:
+    build: ./web
+    ports:
+      - 3000:3000
+    volumes:
+      - ./web/:/usr/src/web/
+      # add some later
+      
+  db:
+    image: postgres:13.8
+    volumes:
+      - postgres_data:/ #finish later
+    env_file:
+      - ./.env.dev.db
+
+volumes:
+  postgres_data:
